@@ -66,6 +66,7 @@ else
 
 // Задача 8: Напишите программу, которая на вход принимает число (N),
 // а на выходе показывает все чётные числа от 1 до N.
+
 /*
 
 Console.Write("Input number: ");
@@ -73,7 +74,15 @@ int numEnd = Convert.ToInt32(Console.ReadLine());
 
 int current = 1;
 int sum = 0;
-Console.Write("Even numbers ");
+
+if (numEnd <= 1)
+{
+    Console.Write("number less or equal 1 ");
+}
+else
+{
+    Console.Write("Even numbers ");
+}
 
 while(current <= numEnd)
 {
