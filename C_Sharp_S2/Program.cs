@@ -49,6 +49,48 @@ int num = Convert.ToInt32(Console.ReadLine());
 showThirdNum(num);
 */
 
+// Задача 15: Напишите программу, которая принимает на вход цифру,
+// обозначающую день недели, и проверяет, является ли этот день выходным.
+
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+/*
+bool findWeekend(int num, int b, int c)
+{
+    if ((num >= b) & (num <= c))
+        return true;
+    return false;
+}
+int a = 1;
+int b = 6;
+int c = 7;
+
+Console.Write("Enter a number for the day of the week: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+bool res = findWeekend(num, b, c);
+
+if (c < num)
+{
+    Console.Write("There is no such day of the week");
+    
+}
+else if (num < a)
+{
+    Console.Write("There is no such day of the week");
+    
+}
+else if (res)
+{
+    Console.WriteLine($"Number {num} is weekend");
+}
+else
+{
+    Console.WriteLine($"Number {num} is not weekend");
+}
+*/
 
 
 
