@@ -9,6 +9,7 @@ int findSecNum(int num)
 {
     int secondThird = num % 100;
     int second = secondThird / 10;
+    
     return second;
 }
 
@@ -16,7 +17,19 @@ Console.Write("Enter a number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 int result = findSecNum(num);
-Console.Write($"Second number is {result} of {num}");
+
+if(num < 100)
+    {
+        Console.WriteLine("This is less than three digit number");
+    }
+    else if(num > 999)
+    {
+        Console.WriteLine("This is more than three digit number");
+    }
+else
+{
+    Console.Write($"Second number is {result} of {num}");
+}
 */
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа
