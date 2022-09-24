@@ -17,7 +17,7 @@ double[,] Rand2dArr(int rows, int columns, int minValue, int maxValue)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            arr1[i, j] = new Random().Next(minValue, maxValue);
+            arr1[i, j] = new Random().Next(minValue, maxValue + 1);
             arr2[i, j] = new Random().NextDouble();
             array[i, j] = arr1[i, j] + arr2[i, j];
         }
@@ -48,7 +48,12 @@ int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input nums of columns: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 
-double[,] newArray = Rand2dArr(rows, columns, 0, 9);
+Console.Write("Input min possible value: ");
+int minValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value: ");
+int maxValue = Convert.ToInt32(Console.ReadLine());
+
+double[,] newArray = Rand2dArr(rows, columns, minValue, maxValue);
 Show2dArray(newArray);
 Console.WriteLine();
 */
@@ -67,16 +72,14 @@ Console.WriteLine();
 // [1, 7] -> такого числа в массиве нет
 
 /*
-int[,] Create2dArray()
+int[,] Create2dArray(int rows, int columns, int minValue, int maxValue)
 {
-    int rows = new Random().Next(3, 6);
-    int columns = new Random().Next(3, 6);
     int[,] newArray = new int[rows, columns];
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
-            newArray[i, j] = new Random().Next(0, 99);
+            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
         }
     }
     return newArray;
@@ -119,13 +122,23 @@ void FindElement(int[,] array, int row, int col)
 }
 
 Console.WriteLine();
+Console.Write("Введите количество строк: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите минимальное значение элемента: ");
+int minValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите максимальное значение элемента: ");
+int maxValue = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine("Отсчет строк и столбцов начинается с нуля!");
 Console.Write("Введите номер строки: ");
 int row = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите номер столбца: ");
 int col = Convert.ToInt32(Console.ReadLine());
 
-int[,] newArray = Create2dArray();
+int[,] newArray = Create2dArray(rows, columns, minValue, maxValue);
 Print2dArray(newArray);
 FindElement(newArray, row, col);
 */
@@ -202,13 +215,14 @@ int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input nums of columns: ");
 int columns = Convert.ToInt32(Console.ReadLine());
 
-// Console.Write("Input min possible value: ");
-// int minValue = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Input max possible value: ");
-// int maxValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input min possible value: ");
+int minValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value: ");
+int maxValue = Convert.ToInt32(Console.ReadLine());
 
-int[,] newArray = Create2dArray(rows, columns, 0, 9);
+int[,] newArray = Create2dArray(rows, columns, minValue, maxValue);
 Print2dArray(newArray);
 
+Console.Write($"Среднее арифметическое значение столбцов ");
 Show2dArray(AverageInCols(newArray));
 */
